@@ -7,54 +7,64 @@ console.log(data);
 
 
 // 1: Show me how to calculate the average price of all items.
-let avg = 0
 function question1 () {
-   for (let i=0; i < data.length; i++)
-   avg = avg += data.price [i] 
-   // Answer:
+let avg = 0
+   for (let i=0; i < data.length; i++) {
+   		avg = avg + data[i].price 
+   }
+   avg = avg / data.length
+   console.log (avg)
+   return avg// Answer:
 }
-console.log (avg / data.price.length)
-
 
 // 2: Show me how to get an array of items that cost between $14.00 and $18.00 USD
 function question2 () {
   let newarr = []
-  for (let i = 0; i < data.price.length; i++) {
-    data.price[i] <14.00 ; data.price > 18.00
- 
-  }// Answer:
-
+  for (let i = 0; i < data.length; i++) {
+    if ( data[i].price < 14.00 && data[i].price > 18.00 ){
+    	newarr.push (data[i])
+    }
+ 	}
+	console.log (newarr)
+	return newarr
+}
 
 // 3: Which item has a "GBP" currency code? Display it's name and price.
 function question3 () {
- let gbp = data.current_code.GBP
- for (var i = 0; i < data.length; i++) {
-  	data.current_code[i] = GBP
-  } // Answer:
-}console.log(gbp)
-
+ for (let i = 0; i < data.length; i++) {
+ 	if (data[i].currency_code === "GBP")
+  }
+   console.log (data[i].title + '' +data[i].price) 
+}
 
 // 4: Display a list of all items who are made of wood.
 function question4 () {
-  let wood = []
-  if data.materials = wood 
-  	wood.push(data.material[i])
-  // Answer:
-}console.log (wood) 
-
+  for (let i = 0; i < data.length; i++) {
+  	for (let j = 0; j < data[i].materials.length; j++) {
+  		if (data[i].materials[j] === "wood")
+  	}
+  }
+	console.log (data[i]) 
+}
 
 // 5: Which items are made of eight or more materials? 
 //    Display the name, number of items and the items it is made of.
 function question5 () {
-  // Answer:
+  for (let i = 0; i < data.length; i++) {
+  	if (data[i].materials.length > 7 ){
+  		console.log (data[i].title + data[i] + data[i].materials)
+  	}
+  }// Answer:
 }
 
 
 // 6: How many items were made by their sellers?
 // Answer:
 function question6 () {
-  let made = ""
+  let made = 0
   for (let i = 0; i < data.length; i++) {
-  	if data.who_made[i] = i_did 
+  	if (data[i].who_made === "i_did" )
+  		made.push (data[i])
   }// Answer:
-}console.log (made)
+console.log (made)
+}
